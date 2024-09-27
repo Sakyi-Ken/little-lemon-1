@@ -1,12 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text,} from 'react-native';
 
 const LittleLemonHeader = () => {
   return (
     <View style={{ flex: 0.2, backgroundColor: '#FACE14'}}>
-      <Text style={{ padding: 40, fontsize: 30,  color: 'black',}}numberOfLines={3}>Welcome
-        <Text style={{ fontWeight: 'bold'}}> Little Lemon</Text> 
-      </Text>
+      <Text style={{ padding: 40, fontSize: 30,  color: 'black',}}
+      > Little Lemon
+      </Text> 
     </View>
   );
 }
