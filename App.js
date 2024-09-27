@@ -14,7 +14,7 @@ export default function App() {
         <WelcomeScreen />
         <StatusBar style="auto" />
       </View>
-      <View style={{backgroundColor: '#495E57',}}>
+      <View style={styles.footerContainer}>
         <LittleLemonFooter />
       </View>
     </>
@@ -24,6 +24,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#495E57',
+    backgroundColor: '#333333',
   },
+  footerContainer: {
+    backgroundColor: '#333333',
+  }
 });
