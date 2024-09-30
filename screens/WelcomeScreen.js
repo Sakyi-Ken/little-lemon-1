@@ -18,7 +18,9 @@ export default function WelcomeScreen () {
       onChangeText={onChangeFirstName}
       style={welcomeStyles.input}
       placeholder={'First Name'}
-      keyboardType={'default'} 
+      keyboardType={'default'}
+      onFocus={() => {Alert.alert('First name is focussed')}}
+      onBlur={() => {Alert.alert('First name is now blurred')}} 
     />
   </ScrollView>
   </KeyboardAvoidingView>
@@ -29,7 +31,7 @@ const welcomeStyles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  headerText: {
+   headerText: {
     padding: 40,
     fontSize: 30,
     color: '#EDEFEE',
