@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, StyleSheet, TextInput } from 'react-native';
+import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView } from 'react-native';
 
 export default function WelcomeScreen () {
   const [firstName, onChangeFirstName] = useState('');
 
   return (
-  <ScrollView style={welcomeStyles.container}>
+  <KeyboardAvoidingView behavior="padding" style={welcomeStyles.container}>
+  <ScrollView keyboardDismissMode='on-drag'>
     <Text style={welcomeStyles.headerText}>
       Welcome to Little Lemon
     </Text>
@@ -16,9 +17,11 @@ export default function WelcomeScreen () {
       value={firstName}
       onChangeText={onChangeFirstName}
       style={welcomeStyles.input}
-      placeholder="First Name"  
+      placeholder={'First Name'}
+      keyboardType={'default'} 
     />
   </ScrollView>
+  </KeyboardAvoidingView>
   )
 }
 

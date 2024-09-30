@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, StyleSheet, TextInput } from 'react-native';
+import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView } from 'react-native';
 
 export default function FeedbackForm() {
   const [firstName, onChangeFirstName] = useState('');
@@ -8,7 +8,8 @@ export default function FeedbackForm() {
   const [phoneNumber, onChangePhoneNumber] = useState('');
 
   return (
-    <ScrollView style={feedStyles.container}>
+    <KeyboardAvoidingView behavior="padding" style={feedStyles.container}>
+    <ScrollView keyboardDismissMode='on-drag'>
       <Text style={feedStyles.headingSection}>
         How was your visit to Little Lemon?
       </Text>
@@ -31,17 +32,20 @@ export default function FeedbackForm() {
         style={feedStyles.input}
         onChangeText={onChangePhoneNumber}
         value={phoneNumber}
-        placeholder="Phone Number"
+        placeholder={'Phone Number'}
+        keyboardType={'phone-pad'}
       />
       <TextInput
         style={feedStyles.messageInput}
         onChangeText={onChangeMessage}
         value={message}
-        placeholder="Message"
+        placeholder={'Please leave feedback'}
         multiline={true}
         numberOfLines={4}
+        maxLength={250}
       />
     </ScrollView>
+    </KeyboardAvoidingView>
   );
 }
 
