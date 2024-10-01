@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView } from 'react-native';
+import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
 
 export default function WelcomeScreen () {
   const [firstName, onChangeFirstName] = useState('');
@@ -18,9 +18,9 @@ export default function WelcomeScreen () {
       onChangeText={onChangeFirstName}
       style={welcomeStyles.input}
       placeholder={'First Name'}
-      keyboardType={'default'}
-      onFocus={() => {Alert.alert('First name is focussed')}}
-      onBlur={() => {Alert.alert('First name is now blurred')}} 
+      keyboardType={'email-address'}
+      onFocus={() => {Alert.alert('Type Only Your First Name')}}
+      onBlur={() => {Alert.alert('Thank you!')}} 
     />
   </ScrollView>
   </KeyboardAvoidingView>
