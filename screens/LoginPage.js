@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView } from 'react-native';
+import { 
+  ScrollView, 
+  Text, 
+  StyleSheet, 
+  TextInput, 
+  KeyboardAvoidingView, 
+  Pressable 
+} from 'react-native';
 
 const loginPage = () => {
   const [userName, onChangeUserName] = useState('');
   const [password, onChangePassword] = useState('');
+
+  const [loggedIn, onLogin] = useState(false);
 
   return (
     <KeyboardAvoidingView style={loginStyles.container}>
@@ -11,22 +20,31 @@ const loginPage = () => {
         <Text style={loginStyles.headerText}>
           Welcome to Little Lemon
         </Text>
-        <Text style={loginStyles.regularText}>Login to continue</Text>
-        <TextInput
-          style={loginStyles.input} 
-          value={userName}
-          onChangeText={onChangeUserName}
-          placeholder={'username'}
-          keyboardType={'email-address'}
-        />
-        <TextInput 
-          style={loginStyles.input}
-          value={password}
-          onChangeText={onChangePassword}
-          placeholder={'pin'}
-          keyboardType={'numeric'}
-          secureTextEntry={true}
-        />
+        {loggedIn && <Text style={loginStyles.headerText}>You are logged in!</Text>}
+
+        {!loggedIn && (
+        <>
+          <Text style={loginStyles.regularText}>Login to continue</Text>
+          <TextInput
+            style={loginStyles.input} 
+            value={userName}
+            onChangeText={onChangeUserName}
+            placeholder={'username'}
+            keyboardType={'email-address'}
+          />
+          <TextInput 
+            style={loginStyles.input}
+            value={password}
+            onChangeText={onChangePassword}
+            placeholder={'pin'}
+            keyboardType={'numeric'}
+            secureTextEntry={true}
+          />
+          <Pressable style={loginStyles.button} onPress={() => onLogin(!loggedIn)}>
+            <Text style={loginStyles.buttonText}>Log in</Text>
+          </Pressable>
+        </>
+        )}
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -57,6 +75,21 @@ const loginStyles = StyleSheet.create({
     marginVertical: 8,
     color: '#EDEFEE',
     textAlign: 'center',
+  },
+  button: {
+    fontSize: 22,
+    padding: 10,
+    marginVertical: 8,
+    margin: 100,
+    backgroundColor: '#EE9972',
+    borderColor: 'EE9972',
+    borderWidth: 2,
+    borderRadius: 50,
+  },
+  buttonText: {
+    color: 'black',
+    textAlign: 'center',
+    fontSize: 25,
   },
 })
 
