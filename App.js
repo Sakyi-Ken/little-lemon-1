@@ -6,14 +6,15 @@ import LittleLemonFooter from './components/LittleLemonFooter'
 //import WelcomeScreen from './screens/WelcomeScreen'
 //import MenuItems from './screens/MenuItems'
 //import FeedbackForm from './screens/FeedbackForm'
-import LoginPage from './screens/LoginPage'
+//import LoginPage from './screens/LoginPage'
+import Welcome from './screens/Welcome';
 
 export default function App() {
   return (
     <>
       <View style={styles.container}>
         <LittleLemonHeader  />
-        <LoginPage />
+        <Welcome />
         <StatusBar style="auto" />
       </View>
       <View style={styles.footerContainer}>
