@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { ScrollView, Text, StyleSheet, TextInput, KeyboardAvoidingView, Alert } from 'react-native';
+import { 
+  ScrollView, 
+  View,
+  Text, 
+  StyleSheet, 
+  TextInput, 
+  KeyboardAvoidingView, 
+  Alert, 
+  Image 
+} from 'react-native';
 
 export default function WelcomeScreen () {
   const [firstName, onChangeFirstName] = useState('');
@@ -7,9 +16,18 @@ export default function WelcomeScreen () {
   return (
   <KeyboardAvoidingView behavior="padding" style={welcomeStyles.container}>
   <ScrollView keyboardDismissMode='on-drag'>
-    <Text style={welcomeStyles.headerText}>
-      Welcome to Little Lemon
-    </Text>
+    <View style={welcomeStyles.header}>
+      <Image
+        style={welcomeStyles.logo}
+        source={require('../img/Image-1.png')}
+        resizeMode="cover" 
+        accessible={true}
+        accessibilityLabel={'Little Lemon Logo'}
+      />
+      <Text style={welcomeStyles.headerText}>
+        Little Lemon
+      </Text>
+    </View>
     <Text style={welcomeStyles.regularText}>
       Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. We would love to hear more about your experience with us!
     </Text>
@@ -52,5 +70,16 @@ const welcomeStyles = StyleSheet.create({
     fontSize: 16,
     borderColor: '#EDEFEE',
     backgroundColor: '#EDEFEE',
-  }
+  },
+  logo: {
+    width: 100,
+    height: 100,
+    borderRadius: 20,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin:'auto'
+  },
 });

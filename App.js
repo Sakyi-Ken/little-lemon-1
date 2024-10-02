@@ -3,18 +3,18 @@ import { StyleSheet, View } from 'react-native';
 
 import LittleLemonHeader from './components/LittleLemonHeader'
 import LittleLemonFooter from './components/LittleLemonFooter'
-//import WelcomeScreen from './screens/WelcomeScreen'
+import WelcomeScreen from './screens/WelcomeScreen'
 //import MenuItems from './screens/MenuItems'
 //import FeedbackForm from './screens/FeedbackForm'
 //import LoginPage from './screens/LoginPage'
-import Welcome from './screens/Welcome';
+//mport Welcome from './screens/Welcome';
 
 export default function App() {
   return (
     <>
       <View style={styles.container}>
         <LittleLemonHeader  />
-        <Welcome />
+        <WelcomeScreen />
         <StatusBar style="auto" />
       </View>
       <View style={styles.footerContainer}>
