@@ -7,14 +7,28 @@ import {
   TextInput, 
   KeyboardAvoidingView, 
   Alert, 
-  Image 
+  Image,
+  useColorScheme,
+  // useWindowDimensions,
 } from 'react-native';
 
 export default function WelcomeScreen () {
   const [firstName, onChangeFirstName] = useState('');
 
+  const colorScheme = useColorScheme();
+
+  //const {width, height, fontScale} = windows;
+
   return (
-  <KeyboardAvoidingView behavior="padding" style={welcomeStyles.container}>
+  <KeyboardAvoidingView 
+    behavior="padding" 
+    style={[
+      welcomeStyles.container,
+      // colorScheme === 'dark' ? {backgroundColor: '#1A1A1A'} : {backgroundColor: '#F2F2F2'}
+      colorScheme === 'light'
+        ? { backgroundColor: '#fff', color: '#333333' }
+        : { backgroundColor: '#333333' },
+    ]}>
   <ScrollView keyboardDismissMode='on-drag'>
     <View style={welcomeStyles.header}>
       <Image
@@ -24,11 +38,18 @@ export default function WelcomeScreen () {
         accessible={true}
         accessibilityLabel={'Little Lemon Logo'}
       />
-      <Text style={welcomeStyles.headerText}>
+      <Text 
+        style={[
+          welcomeStyles.headerText,
+          colorScheme === 'light' ? {color: '#333333'} : {color: '#EDEFEE'}
+        ]}>
         Little Lemon
       </Text>
     </View>
-    <Text style={welcomeStyles.regularText}>
+    <Text style={[
+      welcomeStyles.regularText,
+      colorScheme === 'light' ? {color: '#333333'} : {color: '#EDEFEE'}
+    ]}>
       Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment. We would love to hear more about your experience with us!
     </Text>
     <TextInput 
@@ -81,5 +102,5 @@ const welcomeStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     margin:'auto'
-  },
+  }, 
 });
