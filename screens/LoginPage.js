@@ -8,7 +8,7 @@ import {
   Pressable 
 } from 'react-native';
 
-const loginPage = () => {
+const LoginPage = () => {
   const [userName, onChangeUserName] = useState('');
   const [password, onChangePassword] = useState('');
 
@@ -53,6 +53,7 @@ const loginPage = () => {
 const loginStyles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#333333',
   },
   input: {
     height: 40,
@@ -93,4 +94,4 @@ const loginStyles = StyleSheet.create({
   },
 })
 
-export default loginPage;
+export default LoginPage;

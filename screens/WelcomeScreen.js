@@ -58,7 +58,7 @@ export default function WelcomeScreen () {
       style={welcomeStyles.input}
       placeholder={'First Name'}
       keyboardType={'email-address'}
-      onFocus={() => {Alert.alert('Type Only Your First Name')}}
+      onFocus={() => {Alert.alert('TYPE YOUR FIRST NAME')}}
       onBlur={() => {Alert.alert('Thank you!')}} 
     />
   </ScrollView>
