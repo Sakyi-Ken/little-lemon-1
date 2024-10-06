@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, StyleSheet, Text, ScrollView} from 'react-native';
+import { Image, StyleSheet, Text, ScrollView } from 'react-native';
 
 const Welcome = () => {
   return (

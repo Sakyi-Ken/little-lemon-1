@@ -107,6 +107,7 @@ export default function MenuItems() {
 const menuStyles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#333333',
   },
   innerContainer: {
     paddingHorizontal: 40,

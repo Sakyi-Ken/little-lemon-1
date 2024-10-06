@@ -10,9 +10,10 @@ import {
   Image,
   useColorScheme,
   // useWindowDimensions,
+  Pressable,
 } from 'react-native';
 
-export default function WelcomeScreen () {
+export default function WelcomeScreen ( { navigation }) {
   const [firstName, onChangeFirstName] = useState('');
 
   const colorScheme = useColorScheme();
@@ -61,6 +62,9 @@ export default function WelcomeScreen () {
       onFocus={() => {Alert.alert('TYPE YOUR FIRST NAME')}}
       onBlur={() => {Alert.alert('Thank you!')}} 
     />
+    <Pressable onPress={() => navigation.push('Menu')}>
+      <Text style={welcomeStyles.buttonText}>View Menu</Text>
+    </Pressable>
   </ScrollView>
   </KeyboardAvoidingView>
   )

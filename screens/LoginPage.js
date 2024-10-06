@@ -8,7 +8,7 @@ import {
   Pressable 
 } from 'react-native';
 
-const LoginPage = () => {
+const LoginPage = ( { navigation } ) => {
   const [userName, onChangeUserName] = useState('');
   const [password, onChangePassword] = useState('');
 
@@ -20,31 +20,25 @@ const LoginPage = () => {
         <Text style={loginStyles.headerText}>
           Welcome to Little Lemon
         </Text>
-        {loggedIn && <Text style={loginStyles.headerText}>You are logged in!</Text>}
-
-        {!loggedIn && (
-        <>
-          <Text style={loginStyles.regularText}>Login to continue</Text>
-          <TextInput
-            style={loginStyles.input} 
-            value={userName}
-            onChangeText={onChangeUserName}
-            placeholder={'username'}
-            keyboardType={'email-address'}
-          />
-          <TextInput 
-            style={loginStyles.input}
-            value={password}
-            onChangeText={onChangePassword}
-            placeholder={'pin'}
-            keyboardType={'numeric'}
-            secureTextEntry={true}
-          />
-          <Pressable style={loginStyles.button} onPress={() => onLogin(!loggedIn)}>
-            <Text style={loginStyles.buttonText}>Log in</Text>
-          </Pressable>
-        </>
-        )}
+        <Text style={loginStyles.regularText}>Login to continue</Text>
+        <TextInput
+          style={loginStyles.input} 
+          value={userName}
+          onChangeText={onChangeUserName}
+          placeholder={'username'}
+          keyboardType={'email-address'}
+        />
+        <TextInput 
+          style={loginStyles.input}
+          value={password}
+          onChangeText={onChangePassword}
+          placeholder={'pin'}
+          keyboardType={'numeric'}
+          secureTextEntry={true}
+        />
+        <Pressable style={loginStyles.button} onPress={() => navigation.navigate('Welcome')}>
+          <Text style={loginStyles.buttonText}>Log in</Text>
+        </Pressable>
       </ScrollView>
     </KeyboardAvoidingView>
   );
