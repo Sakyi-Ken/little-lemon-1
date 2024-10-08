@@ -57,7 +57,7 @@ export default function MenuItems() {
 
   const renderItem = ({ item }) => <Item name={item.name} price={item.price} />;
 
-  const renderSectionHeader = ({ section: {title} }) => (
+  const renderSectionHeader = ({ section: { title } }) => (
     <View style={menuStyles.headerStyle}>
       <Text style={menuStyles.sectionHeader}>{title}</Text>
     </View>
@@ -65,11 +65,11 @@ export default function MenuItems() {
 
   const Separator = () => <View style={menuStyles.separator} />
 
-  const Footer = () => (
-    <Text style={menuStyles.footerText}>
-      All Rights Reserved by Little Lemon 2024
-    </Text>
-  );
+  // const Footer = () => (
+  //   <Text style={menuStyles.footerText}>
+  //     All Rights Reserved by Little Lemon 2024
+  //   </Text>
+  // );
 
   // const Header = () => (
   //   <Text style={menuStyles.headerText}>View Menu</Text>
@@ -97,7 +97,7 @@ export default function MenuItems() {
           renderSectionHeader={renderSectionHeader}
           //ListFooterComponent={Footer}
           ItemSeparatorComponent={Separator}
-          //ListHeaderComponent={Header}
+        //ListHeaderComponent={Header}
         />
       )}
     </View>
