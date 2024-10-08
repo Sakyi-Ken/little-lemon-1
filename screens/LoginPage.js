@@ -12,8 +12,6 @@ const LoginPage = ( { navigation } ) => {
   const [userName, onChangeUserName] = useState('');
   const [password, onChangePassword] = useState('');
 
-  const [loggedIn, onLogin] = useState(false);
-
   return (
     <KeyboardAvoidingView style={loginStyles.container}>
       <ScrollView keyboardDismissMode='on-drag'>
@@ -77,7 +75,7 @@ const loginStyles = StyleSheet.create({
     marginVertical: 8,
     margin: 100,
     backgroundColor: '#EE9972',
-    borderColor: 'EE9972',
+    borderColor: '#EE9972',
     borderWidth: 2,
     borderRadius: 50,
   },

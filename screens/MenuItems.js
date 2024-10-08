@@ -65,16 +65,6 @@ export default function MenuItems() {
 
   const Separator = () => <View style={menuStyles.separator} />
 
-  // const Footer = () => (
-  //   <Text style={menuStyles.footerText}>
-  //     All Rights Reserved by Little Lemon 2024
-  //   </Text>
-  // );
-
-  // const Header = () => (
-  //   <Text style={menuStyles.headerText}>View Menu</Text>
-  // );
-
   return (
     <View style={menuStyles.container}>
       {!showMenu && (
@@ -95,9 +85,7 @@ export default function MenuItems() {
           sections={menuItemsToDisplay}
           renderItem={renderItem}
           renderSectionHeader={renderSectionHeader}
-          //ListFooterComponent={Footer}
           ItemSeparatorComponent={Separator}
-        //ListHeaderComponent={Header}
         />
       )}
     </View>
@@ -115,12 +103,7 @@ const menuStyles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  // headerText: {
-  //   color: 'white',
-  //   fontSize: 40,
-  //   flexWrap: 'wrap',
-  //   textAlign: 'center',
-  // },
+ 
   itemText: {
     color: '#FACE14',
     fontSize: 20,
@@ -129,15 +112,7 @@ const menuStyles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: "#EDEFEE",
   },
-  // footerText: {
-  //   color: '#EDEFEE',
-  //   fontSize: 20,
-  //   flexWrap: 'wrap',
-  //   textAlign: 'center',
-  // },
-  // headerStyle: {
-  //   backgroundColor: '#F4CE14',
-  // },
+
   sectionHeader: {
     color: '#333333',
     fontSize: 34,
