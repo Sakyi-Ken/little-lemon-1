@@ -8,7 +8,7 @@ import {
   KeyboardAvoidingView, 
   Alert, 
   Image,
-  useColorScheme,
+  //useColorScheme,
   // useWindowDimensions,
   Pressable,
 } from 'react-native';
@@ -62,7 +62,7 @@ export default function WelcomeScreen ( { navigation }) {
       onFocus={() => {Alert.alert('TYPE YOUR FIRST NAME')}}
       onBlur={() => {Alert.alert('Thank you!')}} 
     />
-    <Pressable onPress={() => navigation.push('Menu')}>
+    <Pressable onPress={() => navigation.push('Services')}>
       <Text style={welcomeStyles.buttonText}>View Menu</Text>
     </Pressable>
   </ScrollView>
@@ -109,7 +109,7 @@ const welcomeStyles = StyleSheet.create({
     margin:'auto'
   },
   buttonText: {
-    color: '#333333',
+    color: '#EDEFEE',
     fontSize: 32,
     textAlign: 'center',
   }, 

@@ -9,7 +9,8 @@ import WelcomeScreen from './screens/WelcomeScreen'
 import MenuItems from './screens/MenuItems'
 //import FeedbackForm from './screens/FeedbackForm'
 import LoginPage from './screens/LoginPage'
-//mport Welcome from './screens/Welcome';
+import Welcome from './screens/Welcome';
+import Services from './screens/Services';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,8 +34,14 @@ export default function App() {
               name="Welcome" 
               component={WelcomeScreen} />
             <Stack.Screen name="Login" component={LoginPage} />
-            <Stack.Screen name="Menu" component={MenuItems} />
+            <Stack.Screen name="Services" component={Services} />
           </Stack.Navigator>
+
+          {/* <Tab.Navigator>
+            <Tab.Screen name="Welcome" component={Welcome} />
+            <Tab.Screen name="Menu" component={MenuItems} />
+            <Tab.Screen name="Feedback" component={FeedbackForm} />
+          </Tab.Navigator> */}
         </View>
 
         <View style={styles.footerContainer}>
