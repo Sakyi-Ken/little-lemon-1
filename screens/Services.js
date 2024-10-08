@@ -26,8 +26,12 @@ export default function Services() {
         tabBarInactiveTintColor: 'gray',
       })}
     >
-      <Tab.Screen name="Welcome" component={Welcome} />
-      <Tab.Screen name="Menu" component={MenuItems} />
+      <Tab.Screen name="Welcome" component={Welcome} 
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen name="Menu" component={MenuItems} 
+        options={{ headerShown: false }}
+      />
     </Tab.Navigator>
   );
 }

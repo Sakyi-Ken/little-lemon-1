@@ -62,7 +62,7 @@ export default function WelcomeScreen ( { navigation }) {
       onFocus={() => {Alert.alert('TYPE YOUR FIRST NAME')}}
       onBlur={() => {Alert.alert('Thank you!')}} 
     />
-    <Pressable onPress={() => navigation.push('Services')}>
+    <Pressable onPress={() => navigation.push('Features')}>
       <Text style={welcomeStyles.buttonText}>View Menu</Text>
     </Pressable>
   </ScrollView>
