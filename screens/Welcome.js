@@ -1,75 +1,64 @@
 import React from 'react';
-import { Image, StyleSheet, Text, ScrollView } from 'react-native';
+import { Image, Text, StyleSheet, View, Pressable } from 'react-native';
 
-const Welcome = () => {
+const Welcome = ( {navigation} ) => {
   return (
-    <ScrollView style={welcomeStyles.container}>
+    <View style={welcomeStyles.container}>
       <Image 
-        style={welcomeStyles.logo} 
-        source={require('../img/Little-Lemon-Logo.png')}
-        resizeMode="center" 
+        style={welcomeStyles.Image} 
+        source={require('../img/little-lemon-logo (2).png')}
+        resizeMode="center"
         accessible={true}
-        accessibilityLabel={'Little Lemon Logo'}
+        accessibilityLabel={'Little Lemon Logo'} 
       />
-      <Text style={welcomeStyles.title}>
-        Little Lemon, your local Mediterranean Bistro
-      </Text>
-      <Image
-        style={welcomeStyles.image} 
-        source={require('../img/Picture1.png')}
-        resizeMode='cover'
-        accessibility={true}
-        accessibilityLabel={'A menu list on top of a table'}
-      />
-      <Image
-        style={welcomeStyles.image} 
-        source={require('../img/Picture2.png')}
-        resizeMode='cover'
-        accessibility={true}
-        accessibilityLabel={'Picture of laddle inside a bowl with meat'}
-      />
-      <Image
-        style={welcomeStyles.image} 
-        source={require('../img/Picture3.png')}
-        resizeMode='cover'
-        accessibility={true}
-        accessibilityLabel={'Picture of orange been cut into two'}
-      />
-      <Image
-        style={welcomeStyles.image} 
-        source={require('../img/Picture4.png')}
-        resizeMode='cover'
-        accessibility={true}
-        accessibilityLabel={'Picture of fishes'}
-      />
-    </ScrollView>
+      <View style={welcomeStyles.containerTitle}>
+        <Text style={welcomeStyles.title}>
+          Little Lemon, your local
+        </Text>
+        <Text style={welcomeStyles.title}>
+          Mediterranean Bistro
+        </Text>
+      </View>
+  
+      <Pressable style={welcomeStyles.button}>
+        <Text style={welcomeStyles.buttonText}>Newsletter</Text>
+      </Pressable>
+    </View>
   );
 }
 
 const welcomeStyles = StyleSheet.create({
-  logo: {
-    height: 100,
-    width: 300,
-  },
   container: {
     flex: 1,
-    padding: 24,
-    marginTop: 25,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
     backgroundColor: '#fff',
   },
-  title: {
-    marginTop: 10,
-    paddingVertical: 10,
-    color: '#333333',
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold'
+  Image: {
+    width: 200,
+    height: 200,
   },
-  image: {
+  title: {
+    fontSize: 22,
+    color: '#333333',
+  },
+  containerTitle: {
+    alignItems: 'center',
+    marginTop: 70,
+    marginBottom: 80,
+  },
+  button:{
+    backgroundColor: '#495E57',
+    padding: 10,
+    borderRadius: 8,
+    marginTop: 70,
     width: 350,
-    height: 250,
-    borderRadius: 10,
-  }
-})
-
+    marginBottom: 50,
+  },
+  buttonText:{
+    color: '#EDEFEE',
+    fontSize: 18,
+    textAlign: 'center',
+  },
+});
 export default Welcome;
