@@ -3,9 +3,10 @@ import { StyleSheet, View, } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import LittleLemonHeader from './components/LittleLemonHeader'
+//import LittleLemonHeader from './components/LittleLemonHeader'
 import LittleLemonFooter from './components/LittleLemonFooter'
-import RootNavigator from './navigators/RootNavigator';
+//import RootNavigator from './navigators/RootNavigator';
+import Welcome from './screens/Welcome';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,10 +14,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
-        <LittleLemonHeader  />
         <StatusBar style="auto" />
         
-        <RootNavigator />
+        <Welcome/>
       </View>
 
       <View style={styles.footerContainer}>
