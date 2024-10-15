@@ -9,8 +9,29 @@ import {
 } from 'react-native';
 
 const LoginPage = ( { navigation } ) => {
-  const [userName, onChangeUserName] = useState('');
+  const [email , onChangeEmail] = useState('');
   const [password, onChangePassword] = useState('');
+  const [isValid, setIsValid] = useState(false);
+
+  const validateInputs = () => {
+    const emailValid = email.includes('@') && email.includes('.');
+    const passwordValid = password.length > 0;
+    setIsValid(emailValid && passwordValid);
+  };
+
+  const setEmail = (text) => {
+    onChangeEmail(text);
+    validateInputs();
+  };
+
+  const setPassword = (text) => {
+    onChangePassword(text);
+    validateInputs();
+  }; 
+
+  const handleLogin = () => {
+    navigation.navigate('Welcome');
+  }
 
   return (
     <KeyboardAvoidingView style={loginStyles.container}>
@@ -21,20 +42,23 @@ const LoginPage = ( { navigation } ) => {
         <Text style={loginStyles.regularText}>Login to continue</Text>
         <TextInput
           style={loginStyles.input} 
-          value={userName}
-          onChangeText={onChangeUserName}
-          placeholder={'username'}
+          value={email}
+          onChangeText={setEmail}
+          placeholder={'email'}
           keyboardType={'email-address'}
         />
         <TextInput 
           style={loginStyles.input}
           value={password}
-          onChangeText={onChangePassword}
+          onChangeText={setPassword}
           placeholder={'pin'}
           keyboardType={'numeric'}
           secureTextEntry={true}
         />
-        <Pressable style={loginStyles.button} onPress={() => navigation.navigate('Welcome')}>
+        <Pressable 
+          style={[loginStyles.button, !isValid && loginStyles.buttonDisabled]} 
+          onPress={handleLogin}
+          disabled={!isValid}>
           <Text style={loginStyles.buttonText}>Log in</Text>
         </Pressable>
       </ScrollView>
@@ -84,6 +108,10 @@ const loginStyles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 25,
   },
+  buttonDisabled: {
+    backgroundColor: 'gray',
+    borderColor: 'gray',
+  }
 })
 
 export default LoginPage;

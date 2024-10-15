@@ -10,11 +10,18 @@ import {
   Image,
   //useColorScheme,
   // useWindowDimensions,
-  Pressable,
 } from 'react-native';
+
+import Button from '../components/Button.js';
 
 export default function WelcomeScreen ( { navigation }) {
   const [firstName, onChangeFirstName] = useState('');
+  const [isValid, setIsValid] = useState(false);
+
+  const validateName = (text) => {
+    onChangeFirstName(text);
+    setIsValid(text.length > 0);
+  };
 
   //const colorScheme = useColorScheme();
 
@@ -55,16 +62,22 @@ export default function WelcomeScreen ( { navigation }) {
     </Text>
     <TextInput 
       value={firstName}
-      onChangeText={onChangeFirstName}
+      onChangeText={validateName}
       style={welcomeStyles.input}
       placeholder={'First Name'}
       keyboardType={'email-address'}
       onFocus={() => {Alert.alert('TYPE YOUR FIRST NAME')}}
       onBlur={() => {Alert.alert('Thank you!')}} 
     />
-    <Pressable onPress={() => navigation.push('Features')}>
+    {/* <Pressable onPress={() => navigation.push('Features')}>
       <Text style={welcomeStyles.buttonText}>View Menu</Text>
-    </Pressable>
+    </Pressable> */}
+    <Button
+    onPress={() => navigation.push('Features')}
+    disabled={!isValid}
+    >
+      View Menu
+    </Button>
   </ScrollView>
   </KeyboardAvoidingView>
   )
