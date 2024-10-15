@@ -24,13 +24,14 @@ export default function Services() {
         },
         tabBarActiveTintColor: 'tomato',
         tabBarInactiveTintColor: 'gray',
+        headerShown: false,
       })}
     >
       <Tab.Screen name="Welcome" component={Welcome} 
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
       <Tab.Screen name="Menu" component={MenuItems} 
-        options={{ headerShown: false }}
+        // options={{ headerShown: false }}
       />
     </Tab.Navigator>
   );

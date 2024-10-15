@@ -6,7 +6,6 @@ import {
   Text, 
   StyleSheet, 
   Alert,
-  KeyboardAvoidingView 
 } from 'react-native';
 import Button from '../components/Button.js';
 import {validateEmail} from '../utils';
@@ -34,12 +33,12 @@ const SubscribeScreen = () => {
           onChangeText={setEmail}
           placeholder={'Type your email'}
           keyboardType='email-address'
-          //textContentType='emailAddress'
+          textContentType='emailAddress'
         />
         <Button 
           onPress={() => 
             Alert.alert('Thanks for subscribing, stay tuned!'
-          )}
+ )}
           disabled={!isEmailValid}
         >
           Subscribe

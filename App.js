@@ -1,27 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 //import LittleLemonHeader from './components/LittleLemonHeader'
-import LittleLemonFooter from './components/LittleLemonFooter'
-//import RootNavigator from './navigators/RootNavigator';
-import Welcome from './screens/Welcome';
-
-const Stack = createNativeStackNavigator();
+//import LittleLemonFooter from './components/LittleLemonFooter'
+import RootNavigator from './navigators/RootNavigator';
 
 export default function App() {
   return (
     <NavigationContainer>
       <View style={styles.container}>
         <StatusBar style="auto" />
-        
-        <Welcome/>
+        <RootNavigator/>
       </View>
 
-      <View style={styles.footerContainer}>
+      {/* <View style={styles.footerContainer}>
         <LittleLemonFooter />
-      </View>
+      </View> */}
     </NavigationContainer>
   );
 }
