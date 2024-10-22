@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { View, Text, StyleSheet} from 'react-native';
+import { View, Text, StyleSheet, FlatList} from 'react-native';
 
-export default function MenuItems({item}) {
+export default function MenuItems() {
   const [isLoading, setLoading] = React.useState(true);
   const [data, setData] = React.useState([]);
 
@@ -15,7 +15,7 @@ export default function MenuItems({item}) {
 
   const getMenu = async () => {
     try{
-      const response = await fetch('https://raw.githubusercontent.com/  Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu-items-by-category.json'    
+      const response = await fetch('https://raw.githubusercontent.com/Meta-Mobile-Developer-PC/Working-With-Data-API/main/menu-items-by-category.json'    
       );
       const responseJson = await response.json();
       setData(responseJson.menu);
@@ -50,7 +50,7 @@ export default function MenuItems({item}) {
         <FlatList
           data={data}
           renderItem={renderItem}
-          keyExtractor={ ({ id }, index ) => id}
+          keyExtractor={ ({ id }) => id}
         />
       )}
     </View>
@@ -64,7 +64,7 @@ const menuStyles = StyleSheet.create({
   innerContainer: {
     paddingHorizontal: 40,
     paddingVertical: 20,
-    backgroundColor:  '495E57',
+    backgroundColor:  '#495E57',
     flowDirection: 'row',
     justifyContent: 'space-between', 
   },
