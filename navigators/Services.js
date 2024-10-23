@@ -2,8 +2,9 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
-import MenuItems from '../screens/MenuItems';
+//import MenuItems from '../screens/MenuItems';
 import Welcome from '../screens/MenuImage';
+import MenuItems from '../sample/JsonMenuItems';
 
 const Tab = createBottomTabNavigator();
 
