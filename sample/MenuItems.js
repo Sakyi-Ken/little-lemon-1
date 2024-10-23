@@ -65,7 +65,7 @@ const menuStyles = StyleSheet.create({
     paddingHorizontal: 40,
     paddingVertical: 20,
     backgroundColor:  '#495E57',
-    flowDirection: 'row',
+    flexDirection: 'row',
     justifyContent: 'space-between', 
   },
   itemText: {
