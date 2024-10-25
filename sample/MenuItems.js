@@ -19,7 +19,6 @@ export default function MenuItems() {
       );
       const responseJson = await response.json();
       setData(responseJson.menu);
-      //setLoading(false);
     } catch (error) {
       console.error(error);
     } finally {
